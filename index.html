@@ -3,88 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ゲーム開発者を目指す学生のポートフォリオ">
     <title>Game Developer Portfolio</title>
+
     <style>
+        /* 全体設定 */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: sans-serif;
-            background: #101820;
-            color: white;
+            background-color: #1e1e1e;
+            color: #e2e8f0;
+            font-family: "Meiryo", sans-serif;
+            line-height: 1.8;
         }
 
+        /* ヘッダー */
         header {
-            padding: 25px;
+            background: linear-gradient(90deg, #1e293b, #0f172a);
+            padding: 45px 20px;
             text-align: center;
-            background: #1b2b3a;
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            color: #94a3b8;
+        }
+
+        /* ナビゲーション */
         nav {
-            text-align: center;
-            padding: 15px;
             background: #263849;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
             color: white;
-            margin: 15px;
             text-decoration: none;
+            margin: 0 15px;
         }
 
-        main {
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 20px;
-            text-align: center;
+        nav a:hover {
+            color: #38bdf8;
         }
 
-        h1 {
-            font-size: 42px;
-        }
-
-        .description {
-            color: #b8c5d1;
-            line-height: 2;
+        /* コンテンツ */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
         }
 
         section {
-            margin-top: 70px;
+            margin-bottom: 65px;
         }
+
+        section h2 {
+            border-left: 5px solid #38bdf8;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* プロフィール */
+        .profile {
+            background: #263849;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .profile h3 {
+            color: #38bdf8;
+        }
+
+        /* スキル */
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background: #263849;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-top: 0;
+        }
+
+        /* 作品一覧 */
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #263849;
+            border-radius: 10px;
+            padding: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: #33475b;
+        }
+
+        .card img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            color: #cbd5e1;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #0f172a;
+            color: #7dd3fc;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            margin: 3px;
+        }
+
+        .link {
+            display: inline-block;
+            color: #38bdf8;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        /* フッター */
+        footer {
+            background: #0f172a;
+            text-align: center;
+            padding: 25px;
+            color: #94a3b8;
+        }
+
     </style>
 </head>
+
 <body>
 
-<header>
-    <h2>GAME DEVELOPER PORTFOLIO</h2>
-</header>
+    <!-- ヘッダー -->
+    <header>
+        <h1>PORTFOLIO</h1>
+        <p>GAME DEVELOPER</p>
+    </header>
 
-<nav>
-    <a href="#about">プロフィール</a>
-    <a href="#skills">スキル</a>
-    <a href="#works">制作作品</a>
-</nav>
+    <!-- メニュー -->
+    <nav>
+        <a href="#about">PROFILE</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#works">WORKS</a>
+    </nav>
 
-<main>
-    <h1>GAME DEVELOPER</h1>
-    <p class="description">
-        ゲーム開発者を目指して学習中。<br>
-        Unity・C#・C++を使用したゲーム制作に取り組んでいます。
-    </p>
+    <div class="container">
 
-    <section id="about">
-        <h2>PROFILE</h2>
-        <p>プロフィールを掲載する予定です。</p>
-    </section>
+        <!-- 自己紹介 -->
+        <section id="about">
+            <h2>PROFILE / 自己紹介</h2>
 
-    <section id="skills">
-        <h2>SKILLS</h2>
-        <p>Unity / C# / C++ / DxLib</p>
-    </section>
+            <div class="profile">
+                <h3>プロフィール</h3>
 
-    <section id="works">
-        <h2>WORKS</h2>
-        <p>制作したゲームを掲載する予定です。</p>
-    </section>
-</main>
+                <ul>
+                    <li>氏名：ここに入力</li>
+                    <li>所属：ここに入力</li>
+                    <li>学年：ここに入力</li>
+                    <li>志望職種：ゲームプログラマー</li>
+                </ul>
+
+                <h3>自己紹介</h3>
+
+                <p>
+                    ゲームプログラマーを目指して、
+                    ゲーム開発の学習に取り組んでいます。
+                </p>
+
+                <p>
+                    UnityとC#を使用したゲーム制作や、
+                    C++とDxLibを使用したプログラミングを学習しています。
+                </p>
+
+                <p>
+                    ゲームの企画から実装まで、
+                    自分で考えて形にすることを大切にしています。
+                </p>
+            </div>
+        </section>
+
+        <!-- スキル -->
+        <section id="skills">
+            <h2>SKILLS / 技術・スキル</h2>
+
+            <div class="skill-list">
+
+                <div class="skill-card">
+                    <h3>Unity</h3>
+                    <p>3D・2Dゲーム開発</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>C#</h3>
+                    <p>ゲームシステム・プレイヤー制御</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>C++</h3>
+                    <p>ゲームプログラミング</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>DxLib</h3>
+                    <p>ゲーム開発</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Visual Studio</h3>
+                    <p>プログラム開発・デバッグ</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Git / GitHub</h3>
+                    <p>ソースコード管理</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 制作作品 -->
+        <section id="works">
+            <h2>WORKS / 制作作品</h2>
+
+            <div class="games">
+
+                <!-- 作品1 -->
+                <div class="card">
+                    <img src="images/orbital-shot.png"
+                         alt="ORBITAL SHOT">
+
+                    <h3>ORBITAL SHOT</h3>
+
+                    <p>
+                        Unityを使用した3Dシューティングゲーム。
+                        敵の接近に合わせて球を発射し、
+                        プレイヤーを守るゲームです。
+                    </p>
+
+                    <p>
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">3D</span>
+                    </p>
+
+                    <p>制作状況：開発中</p>
+
+                    <a class="link" href="#">
+                        詳細を見る
+                    </a>
+                </div>
+
+                <!-- 作品2 -->
+                <div class="card">
+                    <img src="images/unity-2d.png"
+                         alt="Unity 2Dゲーム">
+
+                    <h3>Unity 2Dゲーム</h3>
+
+                    <p>
+                        UnityとC#を使用した2Dゲーム。
+                        プレイヤーの移動、攻撃、
+                        回復、インタラクトなどの
+                        システムを実装しています。
+                    </p>
+
+                    <p>
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">2D</span>
+                    </p>
+
+                    <p>制作状況：開発中</p>
+
+                    <a class="link" href="#">
+                        詳細を見る
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Game Developer Portfolio</p>
+    </footer>
 
 </body>
 </html>
